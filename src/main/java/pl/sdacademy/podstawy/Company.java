@@ -48,4 +48,18 @@ public class Company {
         }
         return Arrays.copyOf(retiredEmployees, counter);
     }
+
+    public Employee[] getRetiredEmployees() {
+        return getRetiredEmployees(LocalDate.now());
+    }
+
+    public Employee[] getRetiredEmplyees(String date){
+        return getRetiredEmployees(LocalDate.parse(date));
+    }
+
+    public void raise(double payRise){
+        for (Employee employee : employees) {
+            employee.setSalary(employee.getSalary()+payRise);
+        }
+    }
 }
